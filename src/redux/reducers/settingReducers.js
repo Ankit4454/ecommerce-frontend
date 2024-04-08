@@ -11,13 +11,22 @@ const settingSlice = createSlice({
   initialState: initialState,
   reducers: {
     toggleNavbar: (state, action) => {
-      state.viewNavbar = !state.viewNavbar;
+      return {
+        ...state,
+        viewNavbar: !state.viewNavbar,
+      };
     },
     toggleProductCard: (state, action) => {
-      state.viewProductCard = !state.viewProductCard;
+      return {
+        ...state,
+        viewProductCard: !state.viewProductCard,
+      };
     },
     toggleCatalog: (state, action) => {
-      state.viewCatalog = !state.viewCatalog;
+      return {
+        ...state,
+        viewCatalog: !state.viewCatalog,
+      };
     },
   },
 });

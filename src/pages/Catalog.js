@@ -1,9 +1,9 @@
 import React from 'react';
 
-const catalog = () => {
+const Catalog = () => {
   return (
-    <div>catalog</div>
+    <div className="flex flex-col min-h-screen items-center justify-center">Catalog</div>
   )
 }
 
-export default catalog;
+export default Catalog;
