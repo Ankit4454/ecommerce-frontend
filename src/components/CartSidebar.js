@@ -30,7 +30,7 @@ const CartSidebar = (props) => {
   return (
     <div
       ref={sidebarRef}
-      className={`fixed h-full right-0 w-96 bg-white z-50 overflow-y-auto transform transition-transform ease-in-out border-l duration-300 ${
+      className={`fixed h-full right-0 w-5/6 max-w-sm bg-white z-50 overflow-y-auto transform transition-transform ease-in-out border-l duration-300 ${
         props.open ? "translate-x-0" : "translate-x-full"
       }`}
     >

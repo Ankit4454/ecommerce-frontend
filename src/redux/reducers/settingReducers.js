@@ -4,6 +4,7 @@ const initialState = {
   viewNavbar: true,
   viewProductCard: true,
   viewCatalog: true,
+  loading: false,
 };
 
 const settingSlice = createSlice({
@@ -28,12 +29,25 @@ const settingSlice = createSlice({
         viewCatalog: !state.viewCatalog,
       };
     },
+    showLoader: (state, action) => {
+      return {
+        ...state,
+        loading: true,
+      };
+    },
+    hideLoader: (state, action) => {
+      return {
+        ...state,
+        loading: false,
+      };
+    },
   },
 });
 
 export const settingReducer = settingSlice.reducer;
-export const { toggleNavbar, toggleProductCard, toggleCatalog } =
+export const { toggleNavbar, toggleProductCard, toggleCatalog, showLoader, hideLoader } =
   settingSlice.actions;
 export const navbarSelector = (state) => state.setting.viewNavbar;
 export const productCardSelector = (state) => state.setting.viewProductCard;
 export const catalogSelector = (state) => state.setting.viewCatalog;
+export const loadingSelector = (state) => state.setting.loading;

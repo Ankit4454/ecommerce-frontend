@@ -133,7 +133,7 @@ const Navbar = (props) => {
           className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"
           onClick={handleBurgerClick}
         ></div>
-        <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+        <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-10 bg-white border-r overflow-y-auto">
           <div className="flex items-center mb-8">
             <Link
               className="mr-auto text-3xl text-blue-500 font-bold leading-none"
@@ -210,10 +210,10 @@ const Navbar = (props) => {
     </>
   ) : (
     <>
-      <nav className="fixed top-0 left-0 bottom-0 flex flex-col justify-between w-5/6 max-w-sm py-6 bg-gray-50 border-r overflow-y-auto">
-        <div className="w-full">
+      <nav className="hidden fixed top-0 left-0 bottom-0 lg:flex lg:flex-col lg:justify-between float-left w-3/12 py-6 bg-white border-r overflow-y-auto">
+        <div>
           <Link
-            className="text-3xl w-full font-bold text-blue-500 px-10 leading-none"
+            className="text-3xl font-bold text-blue-500 px-10 leading-none"
             to="/"
           >
             eCommerce
@@ -261,7 +261,6 @@ const Navbar = (props) => {
             </li>
           </ul>
         </div>
-
         <div className="px-10">
           <button
             className="flex w-full items-center justify-center px-4 py-3 mb-2 leading-loose text-xs text-white font-semibold bg-blue-500 hover:bg-blue-600 rounded-3xl"
@@ -271,27 +270,32 @@ const Navbar = (props) => {
           </button>
         </div>
       </nav>
-      <div className="absolute top-4 right-10 lg:hidden">
-        <button
-          className="navbar-burger flex items-center text-blue-500 p-3"
-          onClick={handleBurgerClick}
-        >
-          <svg
-            className="block h-4 w-4 fill-current"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
+      <nav className="lg:hidden sticky top-0 left-0 right-0 z-50 px-10 py-5 flex justify-between items-center border-b bg-white">
+        <Link className="text-3xl font-bold text-blue-500 leading-none" to="/">
+          eCommerce
+        </Link>
+        <div className="lg:hidden">
+          <button
+            className="navbar-burger flex items-center text-blue-500 p-3"
+            onClick={handleBurgerClick}
           >
-            <title>Mobile menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-          </svg>
-        </button>
-      </div>
+            <svg
+              className="block h-4 w-4 fill-current"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Mobile menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
       <div className="navbar-menu relative z-50 hidden">
         <div
           className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"
           onClick={handleBurgerClick}
         ></div>
-        <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+        <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-10 bg-white border-r overflow-y-auto">
           <div className="flex items-center mb-8">
             <Link
               className="mr-auto text-3xl text-blue-500 font-bold leading-none"
