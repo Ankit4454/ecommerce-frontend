@@ -12,15 +12,15 @@ const cartSlice = createSlice({
       state.cart.push(action.payload);
     },
     increment: (state, action) => {
-      const _id = action.payload;
-      const existingItem = state.cart.find((item) => item._id === _id);
+      const id = action.payload;
+      const existingItem = state.cart.find((item) => item.id === id);
       if (existingItem) {
         existingItem.qty += 1;
       }
     },
     decrement: (state, action) => {
-      const _id = action.payload;
-      const index = state.cart.findIndex((item) => item._id === _id);
+      const id = action.payload;
+      const index = state.cart.findIndex((item) => item.id === id);
 
       if (index !== -1) {
         if (state.cart[index].qty === 1) {
@@ -31,8 +31,8 @@ const cartSlice = createSlice({
       }
     },
     deleteCartItem: (state, action) => {
-      const _id = action.payload;
-      const index = state.cart.findIndex((item) => item._id === _id);
+      const id = action.payload;
+      const index = state.cart.findIndex((item) => item.id === id);
 
       if (index !== -1) {
         state.cart.splice(index, 1);

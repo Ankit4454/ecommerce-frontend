@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { LiaRupeeSignSolid } from "react-icons/lia";
-import { PiPlusThin, PiMinusThin } from "react-icons/pi";
+import { PiPlusThin, PiMinusThin, PiCurrencyDollarDuotone } from "react-icons/pi";
 import { useDispatch, useSelector } from "react-redux";
 import {
   cartSelector,
@@ -12,7 +11,7 @@ import {
 const Cart = (props) => {
   const dispatch = useDispatch();
   const cartItems = useSelector(cartSelector);
-  const { id, picture, name, price } = props.cart;
+  const { id, image, title, price } = props.cart;
   const [quantity, setQuantity] = useState();
 
   const handleDeleteCart = () => {
@@ -40,18 +39,18 @@ const Cart = (props) => {
     <li className="flex py-6">
       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
         <img
-          src={picture}
-          alt={name}
+          src={image}
+          alt={title}
           className="h-full w-full object-cover object-center"
         />
       </div>
 
       <div className="ml-4 flex flex-1 flex-col">
         <div>
-          <div className="flex justify-between text-base font-medium text-gray-900">
-            <h3>{name}</h3>
+          <div className="flex justify-between text-sm font-medium text-gray-900">
+            <h3>{title}</h3>
             <p className="ml-4 flex items-center">
-              <LiaRupeeSignSolid /> {price}
+              <PiCurrencyDollarDuotone /> {price}
             </p>
           </div>
         </div>

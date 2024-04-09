@@ -9,8 +9,8 @@ const wishlistSlice = createSlice({
   initialState: initialState,
   reducers: {
     toggle: (state, action) => {
-      const { _id } = action.payload;
-      const index = state.wishlist.findIndex((item) => item._id === _id);
+      const { id } = action.payload;
+      const index = state.wishlist.findIndex((item) => item.id === id);
 
       if (index !== -1) {
         state.wishlist.splice(index, 1);

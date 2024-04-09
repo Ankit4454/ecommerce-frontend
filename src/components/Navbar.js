@@ -263,10 +263,16 @@ const Navbar = (props) => {
         </div>
         <div className="px-10">
           <button
-            className="flex w-full items-center justify-center px-4 py-3 mb-2 leading-loose text-xs text-white font-semibold bg-blue-500 hover:bg-blue-600 rounded-3xl"
+            className="flex relative w-full items-center justify-center px-4 py-3 mb-2 text-base text-white font-medium bg-blue-500 hover:bg-blue-600 rounded-3xl"
             onClick={props.toggleCartBtn}
           >
-            <MdShoppingCartCheckout className="mr-2" size={20} /> Cart
+            <MdShoppingCartCheckout className="mr-2" size={20} />
+            {cartCount !== 0 && (
+              <span className="absolute bg-gray-200 text-gray-900 px-2 py-1 text-xs font-bold rounded-full -top-3 -right-1">
+                {cartCount}
+              </span>
+            )}
+            Cart
           </button>
         </div>
       </nav>

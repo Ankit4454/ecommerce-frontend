@@ -6,6 +6,7 @@ import {
   showLoader,
 } from "../redux/reducers/settingReducers";
 import { getAllProducts } from "../api";
+import ProductCard from "../components/ProductCard";
 
 const Catalog = () => {
   const viewNavbar = useSelector(navbarSelector);
@@ -18,7 +19,6 @@ const Catalog = () => {
       try {
         dispatch(showLoader());
         const res = await getAllProducts();
-        console.log("Products", res);
         if (res.success) {
           setProducts(res.data);
         }
@@ -33,10 +33,17 @@ const Catalog = () => {
 
   return (
     <div
-      className={`flex flex-col min-h-screen items-center justify-center ${
+      className={`flex flex-col min-h-screen py-6 px-10 ${
         viewNavbar ? "w-full" : "w-full lg:w-9/12 float-right"
       }`}
-    ></div>
+    >
+      <h1 className="text-2xl font-semibold text-gray-900 pb-6">Catalog</h1>
+      <div className="py-8 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+    </div>
   );
 };
 

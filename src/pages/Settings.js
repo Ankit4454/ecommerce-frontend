@@ -53,7 +53,7 @@ const Settings = () => {
         <div className="grid grid-cols-1 gap-x-8 gap-y-6">
           <div>
             <label className="block text-sm font-semibold leading-6 text-gray-900">
-              Navigation bar view
+              Customize navigation bar:
             </label>
             <div className="grid w-full mt-2.5 grid-cols-2 gap-2 rounded-xl bg-gray-300 p-2">
               <div>
@@ -97,7 +97,7 @@ const Settings = () => {
 
           <div>
             <label className="block text-sm font-semibold leading-6 text-gray-900">
-              Product card view
+              Customize product card:
             </label>
             <div className="grid w-full mt-2.5 grid-cols-2 gap-2 rounded-xl bg-gray-300 p-2">
               <div>
@@ -141,7 +141,7 @@ const Settings = () => {
 
           <div>
             <label className="block text-sm font-semibold leading-6 text-gray-900">
-              Catalog view
+              Customize catalog view:
             </label>
             <div className="grid w-full mt-2.5 grid-cols-2 gap-2 rounded-xl bg-gray-300 p-2">
               <div>
