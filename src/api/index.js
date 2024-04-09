@@ -21,7 +21,7 @@ export const getAllProducts = () => {
   return customFetch(API_URLS.products());
 };
 
-export const getLimitedProducts = (limit) => {
+export const getLimitedProducts = (limit = 10) => {
   return customFetch(API_URLS.limitProducts(limit));
 };
 
